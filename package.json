@@ -1,0 +1,21 @@
+{
+  "name": "pocket-busines",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "type": "module",
+  "scripts": {
+    "start": ""
+  },
+  "keywords": [
+    "inovação",
+    "empreendedorismo",
+    "vendas",
+    "marketing"
+  ],
+  "author": "Flávia, Nikoly, Iara, Rafaela, Murilo, Matheus",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.53.0"
+  }
+}

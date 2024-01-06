@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+@import "../abstract/variables.css";
+
+
+/* @see https://piccalil.li/blog/a-more-modern-css-reset/ */
+html {
+  -webkit-box-sizing: var(--box-sizing);
+  -moz-box-sizing: var(--box-sizing);
+  box-sizing: var(--box-sizing);
+  scroll-behavior: var(--scroll-behavior);
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+*,
+*::before,
+*::after {
+  --_box-sizing: inherit;
+
+  -webkit-box-sizing: var(--_box-sizing);
+  -moz-box-sizing: var(--_box-sizing);
+  box-sizing: var(--_box-sizing);
+  outline-offset: .25rem;
+}
+
+/* @see https://andy-bell.co.uk/a-modern-css-reset/ */
+/* @see https://www.joshwcomeau.com/css/custom-css-reset/ */
+body {
+  color: var(--clr-text);
+  font-family: var(--font-system);
+  font-size: var(--fs-12);
+  font-weight: var(--fw-400);
+  min-height: 100vh;
+  min-height: 100dvh;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  width: 100dvw;
+}
+
+/* @see https://moderncss.dev/generating-font-size-css-rules-and-creating-a-fluid-type-scale/ */
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
+  --_hyphens: auto;
+
+  -webkit-hyphens: var(--_hyphens);
+  -moz-hyphens: var(--_hyphens);
+  -ms-hyphens: var(--_hyphens);
+  hyphens: var(--_hyphens);
+  overflow-wrap: break-word;
+}
+
+/* @see https://www.zachleat.com/web/fluid-images/ */
+img,
+iframe,
+object,
+embed,
+video {
+  max-width: 100%;
+}
+
+img[width][height],
+iframe[width][height],
+object[width][height],
+embed[width][height],
+video[width][height] {
+  height: auto;
+}
+
+img[src$=".svg"] {
+  height: auto;
+  max-width: none;
+  width: 100%;
+}
+
+label {
+  cursor: pointer;
+}
+
+sup,
+sub {
+  font-size: 50%;
+}
+
+/* @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s#accessibility_concerns */
+/* @see https://www.tpgi.com/short-note-on-making-your-mark-more-accessible/ */
+s,
+mark {
+  &::before,
+  &::after {
+    -webkit-clip-path: var(--clip-path);
+    clip-path: var(--clip-path);
+    -webkit-clip: var(--clip);
+    -ms-clip: var(--clip);
+    clip: var(--clip);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
+s {
+  &::before {
+    content: " [início de texto tachado] ";
+  }
+
+  &::after {
+    content: " [fim de texto tachado] ";
+  }
+}
+
+mark {
+  &::before {
+    content:" [início de texto destacado] ";
+  }
+
+  &::after {
+    content:" [fim de texto destacado] ";
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* @see https://piccalil.li/blog/a-more-modern-css-reset/ */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+:focus:not(:focus-visible) {
+  -webkit-box-shadow: var(--focus-not-visible-box-shadow);
+  -moz-box-shadow: var(--focus-not-visible-box-shadow);
+  box-shadow: var(--focus-not-visible-box-shadow);
+  outline: 0;
+}

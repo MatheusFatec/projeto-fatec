@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+.c-list-item {
+  cursor: pointer;
+  padding: .5rem;
+  transition: all var(--timing-duration) var(--timing-function);
+
+  .fa-solid {
+    transition: all var(--timing-duration) var(--timing-function);
+  }
+}

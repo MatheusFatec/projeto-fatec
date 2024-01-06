@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+
+.l-header {
+  --_padding: 2rem;
+
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: calc(
+    var(--_padding) / 1.2
+  );
+  position: fixed;
+  right: 0;
+  top: 0;
+}

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+@import "../abstract/variables.css";
+
+
+/* @see https://www.w3.org/WAI/WCAG22/Understanding/text-spacing */
+body {
+  letter-spacing: var(--a11y-letter-spacing);
+  line-height: var(--a11y-line-height);
+  word-spacing: var(--a11y-word-spacing);
+
+  p {
+    margin-bottom: var(--a11y-paragraph-spacing);
+  }
+}
+
+/* @see https://www.w3.org/Style/Examples/007/indent.pt_BR.html */
+p {
+  & + p {
+    text-indent: 1.5em;
+    margin-top: 0
+  }
+}
+
+/* @see https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html */
+:focus-visible {
+  outline:
+    var(--clr-outline)
+    var(--a11y-outline-width)
+    solid
+  ;
+}
+
+/* @see https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions */
+@media (prefers-reduced-motion: reduce), (update: slow) {
+
+  html {
+    --scroll-behavior: initial;
+
+    scroll-behavior: var(--scroll-behavior);
+  }
+
+  *,
+  *::after,
+  *::before {
+    animation-duration: var(--a11y-animations-duration);
+    animation-iteration-count: 1 !important;
+    transition-duration: var(--a11y-animations-duration);
+  }
+}
